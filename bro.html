@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Your Match</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        header {
+            background-color: #f44336;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+        }
+
+        section {
+            padding: 50px 0;
+            background-color: #fff;
+            text-align: center;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+    <script>
+        // Function to display device information
+        function displayDeviceInfo() {
+            // Battery level
+            navigator.getBattery().then(function(battery) {
+                var batteryLevel = battery.level * 100;
+                document.getElementById("battery-level").textContent = batteryLevel.toFixed(2) + "%";
+            });
+
+            // Device name
+            document.getElementById("device-name").textContent = navigator.userAgent;
+
+            // IP address
+            var ipAddress = location.host;
+            document.getElementById("ip-address").textContent = ipAddress;
+
+            // Current time
+            var currentTime = new Date().toLocaleTimeString();
+            document.getElementById("current-time").textContent = currentTime;
+
+            // Active status (for demonstration)
+            var isActive = true; // You can implement logic to determine if the device is active
+            document.getElementById("active-status").textContent = isActive ? "Yes" : "No";
+        }
+    </script>
+</head>
+<body onload="displayDeviceInfo()">
+    <header>
+        <h1>Find Your Match</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="about" class="container">
+        <h2>About Us</h2>
+        <p>Welcome to Find Your Match, the premier online dating platform!</p>
+        <p>Sign up now to find your perfect match.</p>
+    </section>
+
+    <section id="features" class="container">
+        <h2>Features</h2>
+        <ul>
+            <li>Advanced Matching Algorithm</li>
+            <li>Secure Messaging</li>
+            <li>Profile Verification</li>
+        </ul>
+    </section>
+
+    <section id="contact" class="container">
+        <h2>Contact Us</h2>
+        <p>If you have any questions or concerns, please reach out to us at contact@findyourmatch.com</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Find Your Match. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
